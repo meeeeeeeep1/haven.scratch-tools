@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
     <head>
         <style>
@@ -112,12 +112,7 @@ border-color: #4D97FF;
         </style>
       </head>
       
-  <body>
-    <h1>Custom Scratch Font Creator (beta)</h1>
-    <p>This is a tool that lets you creat editable custom fonts for scratch!</p>
-    <h13>By <a href="https://scratch.mit.edu/users/fictioneer/">Haven (fictioneer)</a></h13>
-    <hr>
-<div>
+
     <div class="SvgHeader">
         <input type="text" placeholder="svg name" id="svgtitle" class="svgtitle" value="my-custom-font">
     </div>
