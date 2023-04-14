@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-input[type="text"] {
-    font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size : 12px;
-    font-weight : 500;
+    <head>
+        <style>
+            .inputstyle {
+    font-family : "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size : 14px;
     text-decoration : rgb(87, 94, 117);
     word-spacing : 0px;
-    width: 200px;
-
+    background-color : #FFFFFF;
+background-position : 0% 0%;
+color : #575E75;
+height : 44px;
+border : 1px solid #4D97FF;
+margin : 0 0 8px 0;
+padding : 0 16px 0 16px;
+border-radius: 8px;
 }
 legend {
     font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -20,68 +25,41 @@ legend {
 
  ::placeholder {
     font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size : 13px;
-    font-weight : 500;
+    font-style: italic;
+color: rgba(87,94,117,.6);
  }
 body {
-  background-color: #f2f2f2;
-    font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color : #FFFFFF;
+        font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 #download:hover{
     background-color: #4386e2;
 
 }
-.topnav {
-                background-color: rgb(77, 151, 255);
-                overflow: hidden;
-            }
 
-            /* Style the links inside the navigation bar */
-            .topnav a {
-                float: left;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 17px;
-                white-space: nowrap;
-                color: #fff;
-                font-size: .85rem;
-                font-weight: bold;
-                font-family: "Helvetica Neue","Helvetica",Arial,sans-serif;
-            }
-            .topnav-image {
-    background-color: rgb(77, 151, 255);
-    float: left;
-    margin-right: 10px;
-}
-
-            /* Change the color of links on hover */
-            .topnav a:hover {
-                background-color: rgb(59, 119, 203);
-            }
 select {
-    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
-font-size : 14px;
-text-decoration : rgb(87, 94, 117);
-white-space : nowrap;
-word-spacing : 0px;
-    border-radius: 5px;
+    font-family : "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size : 16px;
+    font-weight : 500;
+    text-decoration : rgb(87, 94, 117);
+    white-space : nowrap;
+    word-spacing : 0px;
+    color : #575E75;
     background-color : #FAFAFA;
-width: 220px;
-color : #575E75;
+    border-radius: 5px;
+    height: 44px;
+    padding : 1px 52px 1px 16px;
+
 }
 
 label {
-    font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size : 16px;
     font-weight : 700;
     text-decoration : rgb(87, 94, 117);
     word-spacing : 0px;
 }
 #download {
-    position: absolute;
-  left: 50%;
-  transform: translate(-50%);
+
         font-family: "Helvetica Neue","Helvetica",Arial,sans-serif;
     text-align: center;
     background-color: #4D97FF;
@@ -93,28 +71,70 @@ label {
     border-radius: 8px;
     border: none;
 }
+.SvgHeader {
+    display: block;
+clear: both;
+margin: 0;
+border-top: 1px solid #fff;
+border-bottom: 1px solid #d9d9d9;
+border-radius: 10px 10px 0 0;
+background-color: #f2f2f2;
+border-left : 1px solid #D9D9D9;
+border-top : 1px solid #D9D9D9;
+border-right : 1px solid #D9D9D9;
 
-    </style>
-  </head>
+padding: 8px 20px;
+overflow: hidden;
+color: #575e75;
+font-family: "Liberation Sans","Helvetica Neue","Helvetica",Arial,sans-serif;
+font-size: 16px;
+border-bottom-color: rgb(217, 217, 217)
+}
+.SvgContent {
+    border-left : 1px solid #D9D9D9;
+border-bottom : 1px solid #D9D9D9;
+border-right : 1px solid #D9D9D9;
+}
+.svgtitle {
+  border-radius: 8px;
+  background-color: transparent;
+  padding: 0 1rem;
+  border: 2px dashed rgba(77,151,255,.25);  width: calc(100% - 2.25rem);
+  color: #575e75;
+  font-size: 1.75rem;
+  font-weight: 500;
+  height: 44px;
+}
+
+.svgtitle::selection {
+border-color: #4D97FF;
+}
+        </style>
+      </head>
+      
   <body>
-    <div class="topnav">
-        <image src="https://raw.githubusercontent.com/meeeeeeeep1/haven.scratch-tools/main/customScratchFont/images/H(1).png" alt="Tiny Logo" height="35">
-        <a class="active" href="#home">Home</a>
-        <a href="#news">Scratch Font Creator</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-    </div> 
-        
-        <!-- Form Name -->
-    <svg id="svg" xmlns="http://www.w3.org/2000/svg" width="450" height="160" stroke="#000" 
-        text-anchor="left" font-size="24">
+    <h1>Custom Scratch Font Creator (beta)</h1>
+    <p>This is a tool that lets you creat editable custom fonts for scratch!</p>
+    <h13>By <a href="https://scratch.mit.edu/users/fictioneer/">Haven (fictioneer)</a></h13>
+    <hr>
+<div>
+    <div class="SvgHeader">
+        <input type="text" placeholder="svg name" id="svgtitle" class="svgtitle" value="my-custom-font">
+    </div>
+    <div class="SvgContent">
+        <svg id="svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" stroke="#000" 
+        text-anchor="middle" font-size="24">
       <g stroke="none">
-        <text id="textElement" font-family="Roboto Condensed" x="0" y="43.42">
+        <text id="textElement" font-family="Roboto Condensed" x="50%" y="50%">
           ABCDEFGHIJKLMNOPQRSTUVWXYZ
         </text>
       </g>
+      </svg>
+    </div>
+</div>
 
-</form>
+
+
     <br>
     <label for="fontfamilyselect">Font Family:</label>
     <select id="fontfamilyselect" onchange="updateFontFamily()">
@@ -241,16 +261,16 @@ label {
       <option value="Impact">Impact</option>
       <option value="Comic Sans MS">Comic Sans MS</option>
     </select>
-    <input type="text" id="fontfamilyinput" placeholder="Or type name of font here" oninput="updateFontFamily()">
+    <input type="text" class="inputstyle" id="fontfamilyinput" placeholder="Or type name of font here" oninput="updateFontFamily()">
     <br>
     <br>
     <label for="textinput">Custom Text:</label>
-    <input type="text" id="textinput" placeholder="Leave box empty for default text" oninput="updateText()"> 
+    <input type="text" id="textinput" class="inputstyle" placeholder="Leave box empty for default text" oninput="updateText()"> 
     <br>
     <p></p>
     <p></p>
     <button id="download" onclick="downloadSVG()">Download SVG</button>
-
+<hr>
     <script>
       function updateFontFamily() {
         var fontSelector = document.getElementById("fontfamilyselect");
@@ -285,10 +305,11 @@ label {
       }
 
       function downloadSVG() {
+        const svgname = document.getElementById("svgtitle").value
         const svg = document.getElementById('svg').outerHTML;
         const blob = new Blob([svg.toString()]);
         const element = document.createElement("a");
-        element.download = "w3c.svg";
+        element.download = svgname + ".svg";
         element.href = window.URL.createObjectURL(blob);
         element.click();
         element.remove();
