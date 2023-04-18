@@ -2,49 +2,44 @@
 <html>
     <head>
         <style>
-.inputstyle {
+.bodyInput {
     font-size : 14px;
-    text-decoration : rgb(87, 94, 117);
-    background-color : #FFFFFF;
-    background-position : 0% 0%;
-    color : #575E75;
-    height : 44px;
-    width: 200px;
-    border : 1px solid #4D97FF;
-    margin : 0 0 8px 0;
-    padding : 0 16px 0 16px;
-    border-radius: 8px;
+    color : #575e75;
+    width: 200px; height : 44px;
+    margin : 0 0 8px 0; /* change */
+    padding : 0 16px 0 16px;  /* need */
+    border-radius: 8px;  /* need */
+  border : 1px solid #4D97FF; /* change */ 
 }
 
-
-::placeholder {
-    font-style: italic;
-    color: rgba(87,94,117,.6);
+::placeholder { /* change */
+    font-style: italic; /* change */
+    color: rgba(87,94,117,.6); /* change */
 }
 body {
-    background-color : #4a90f3;
-    font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color : #4a90f3; /* change */
+    font-family : "Helvetica Neue", Helvetica, Arial, sans-serif; /* change */
 }
 #download:hover{
-    background-color: #4386e2;
+    background-color: #4386e2; /* change */
 
 }
 
 select {
-    font-size : 16px;
+    font-size : 16px; /* change */
     
-    font-weight : 500;
-    text-decoration : rgb(87, 94, 117);
-    white-space : nowrap;
-    word-spacing : 0px;
-    color : #575E75;
-    background-color : #FAFAFA;
-    border-color: rgba(0,0,0,.15);
-    background: #fafafa url("https://scratch.mit.edu/svgs/forms/caret.svg") no-repeat right center;
-    border-radius: 5px;
-    height: 44px;
-    padding : 1px 52px 1px 16px;
-    appearance: none;
+    font-weight : 500; /* change */
+    text-decoration : rgb(87, 94, 117); /* change */
+    white-space : nowrap; /* change */
+    word-spacing : 0px; /* change */
+    color : #575E75; /* change */
+    background-color : #FAFAFA; /* change */
+    border-color: rgba(0,0,0,.15); /* change */
+    background: #fafafa url("https://scratch.mit.edu/svgs/forms/caret.svg") no-repeat right center; /* change */
+    border-radius: 5px; /* change */
+    height: 44px; /* change */
+    padding : 1px 52px 1px 16px; /* change */
+    appearance: none; /* change */
   -webkit-appearance: none; /* for Safari */
 
 }
@@ -98,6 +93,18 @@ color: #575e75;
 font-size: 16px;
 border-bottom-color: rgb(217, 217, 217)
 }
+.italic {
+  font-style: italic;
+}
+.warning {
+font-size:10px;
+color: #8d93a5;
+margin-top:-6px;
+margin-bottom:30px;
+}
+.bold {
+  font-weight: bold;
+}
 .SvgContent {
     border-left : 1px solid #D9D9D9;
 border-bottom : 1px solid #D9D9D9;
@@ -142,9 +149,6 @@ border-color: #4D97FF;
 }
 #copy {
     padding: 3px; /* add some padding for spacing */
-    padding-left: 5px;
-    padding-right: 5px;
-
     margin: 2 auto;
     text-align: center;
     background-color: #fbb43a;
@@ -183,7 +187,7 @@ border-color: #4D97FF;
 
 
     <br>
-    <label for="fontfamilyselect">Font Family: <br></label>
+    <label for="fontfamilyselect">Font Family:</label><br>
     <select id="fontfamilyselect" onchange="updateFontFamily()">
       <option value="Arial">Arial</option>
       <option value="Arial Black">Arial Black</option>
@@ -308,13 +312,12 @@ border-color: #4D97FF;
       <option value="Impact">Impact</option>
       <option value="Comic Sans MS">Comic Sans MS</option>
     </select>
-    <input type="text" class="inputstyle" id="fontfamilyinput" placeholder="Or type name of font here" oninput="updateFontFamily()">
-    <br>
-    <br>
+    <input type="text" class="bodyInput" id="fontfamilyinput" placeholder="Or type name of font here" oninput="updateFontFamily()">
+<p class="warning">*Not everyone has these fonts installed</p>
 
-    <label for="textinput">Custom Text:<br></label>
+    <label for="textinput">Custom Text: <br></label>
     <div style="display: flex; justify-content: center;">
-    <input type="text" id="textinput" class="inputstyle" placeholder="Leave box empty for default text" oninput="updateText()"> 
+    <input type="text" id="textinput" class="bodyInput" placeholder="Leave box empty for default text" oninput="updateText()"> 
 </div>
 
     <br>
@@ -387,6 +390,26 @@ border-color: #4D97FF;
         element.click();
         element.remove();
       }
+      const svg = document.getElementById('svg');
+const text = document.getElementById('textElement');
+const italicCheckbox = document.getElementById('italic-checkbox');
+const boldCheckbox = document.getElementById('bold-checkbox');
+
+italicCheckbox.addEventListener('change', () => {
+  if (italicCheckbox.checked) {
+    text.classList.add('italic');
+  } else {
+    text.classList.remove('italic');
+  }
+});
+
+boldCheckbox.addEventListener('change', () => {
+  if (boldCheckbox.checked) {
+    text.classList.add('bold');
+  } else {
+    text.classList.remove('bold');
+  }
+});
     </script>
   </body>
 </html>
