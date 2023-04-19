@@ -7,3 +7,4 @@ The background color is `#ffffff` for light mode and `#000000` for dark mode.
  <img alt="YOUR-ALT-TEXT" src="YOUR-DEFAULT-IMAGE">
 </picture>
 $${\color{red}Red}$$
+[![#ffffff](https://img.shields.io/badge/github-blue?style=for-the-badge)](https://github.com/hamzamohdzubair/redant)
